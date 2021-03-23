@@ -1,4 +1,4 @@
 # Project_C
-Project made by DiogoValdrez
+Project made by DiogoValdrez and Pickle_f_Rick
 
-For more info contact me in Discord: Duz#8881
+For more info contact me in Discord: Duz#8881, Pedro Raposo#4113
