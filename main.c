@@ -16,7 +16,7 @@ int main()
         printf("->The height must be between 9 and 15;\n");
         printf("->The width must be between 9 and 24;\n");
         scanf(" %d %d", &height, &width);
-    } while (height < 9 || height > 15 || width < 9 || width > 24 || mult(width) || mult(height)==1);
+    } while (height < 9 || height > 15 || width < 9 || width > 24 || mult(width)==1 || mult(height)==1);
     
     
     init_board(board, height, width);
