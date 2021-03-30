@@ -4,10 +4,11 @@
 void init_board(char board[15][24], int height, int width);
 void draw_board(char board[15][24], int height, int width);
 int mult(int value);
-void pecas(int id_peca,int id_variante,char board[15][24],int coor_height,int coor_width);
+void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor_width);
 
 int main()
 {
+
     int height, width;
     char board[15][24];
     do
