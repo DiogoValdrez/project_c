@@ -1,3 +1,8 @@
+/*Batalha naval
+Autores: Diogo Valdrez 99914, Pedro Raposo 100059
+Data: 20/04/2021 ??
+Descrição : ...
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,6 +10,7 @@ void init_board(char board[15][24], int height, int width);
 void draw_board(char board[15][24], int height, int width);
 int mult(int value);
 void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor_width);
+int check_piece(char board[15][24], int coor_height, int coor_width);
 
 int main()
 {
@@ -28,7 +34,7 @@ int main()
 
     return EXIT_SUCCESS;
 }
-
+//Function that checks whether the value is a multiple of 3
 int mult(int value)
 {
     if(value%3 == 0)
@@ -38,7 +44,7 @@ int mult(int value)
         return 1;
     }
 }
-
+//Function that initializes the game board
 void init_board(char board[15][24], int height, int width)
 {
     int i, j;
@@ -51,7 +57,7 @@ void init_board(char board[15][24], int height, int width)
 
     }
 }
-
+//Function that draws the game board
 void draw_board(char board[15][24],int height, int width)
 {
     int i, j;
@@ -85,7 +91,8 @@ void draw_board(char board[15][24],int height, int width)
 
     return ;
 }
-
+/*Function that changes each 3x3 matrix for the piece
+that is suposed to put in it*/
 void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor_width)
 {
     switch (id_piece)
@@ -353,6 +360,103 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
     return;
 }
 
+/*Function that checks whether the piece that was put in the board
+can be there considering the restrictions returning a 0 in case
+ it's well positioned and any other number in case it shouldn't be there*/
+ int check_piece(char board[15][24], int coor_height,int coor_width)
+ {
+     int i, check_value = 0;
+     if (!(coor_height == 0 || coor_width == 0) )
+     {
+        if (board[coor_height][coor_width] != '-')// 0x0
+        {
+            if ( board[coor_height+1][coor_width-1] != '-' || board[coor_height][coor_width-1] != '-' || board[coor_height-1][coor_width-1] != '-' || board[coor_height-1][coor_width] != '-' ||board[coor_height-1][coor_width +1] != '-')
+                {
+                    check_value = 1;
+                }
+        }
+        if (board[coor_height+1][coor_width] != '-')// 1x0
+        {
+            if ( board[coor_height+2][coor_width-1] != '-' || board[coor_height+1][coor_width-1] != '-' || board[coor_height][coor_width-1] != '-')
+            {
+                check_value = 1;
+            }
+        }
+        if (board[coor_height+2][coor_width] != '-')// 2x0
+        {
+            if ( board[coor_height+2][coor_width-1] != '-' || board[coor_height+1][coor_width-1] != '-')
+            {
+                check_value = 1;
+            }
+        }
+         if (board[coor_height][coor_width+1] != '-')// 0x1
+        {
+            if ( board[coor_height-1][coor_width] != '-' || board[coor_height-1][coor_width+1] != '-' || board[coor_height-1][coor_width+2] != '-')
+            {
+                check_value = 1;
+            }
+        }
+        if (board[coor_height][coor_width+2] != '-')// 0x2
+        {
+            if ( board[coor_height-1][coor_width+1] != '-' || board[coor_height-1][coor_width+2] != '-')
+            {
+                check_value = 1;
+            }
+        }
+     }else
+     {
+         if (coor_height == 0 && coor_width != 0)
+         {
+            if (board[coor_height][coor_width] != '-')// 0x0
+            {
+                if ( board[coor_height][coor_width-1] != '-' || board[coor_height+1][coor_width-1] != '-')
+                {
+                    check_value = 1;
+                }
+            }
+            if (board[coor_height+1][coor_width] != '-')// 1x0
+            {
+                if ( board[coor_height+2][coor_width-1] != '-' || board[coor_height+1][coor_width-1] != '-' || board[coor_height][coor_width-1] != '-')
+                {
+                    check_value = 1;
+                }
+            }
+            if (board[coor_height+2][coor_width] != '-')// 2x0
+            {
+                if ( board[coor_height+2][coor_width-1] != '-' || board[coor_height+1][coor_width-1] != '-')
+                {
+                    check_value = 1;
+                }
+            }
 
+         }
+         if (coor_width == 0 && coor_width != 0)
+         {
+            if (board[coor_height][coor_width] != '-')// 0x0
+            {
+                if ( board[coor_height-1][coor_width] != '-' || board[coor_height-1][coor_width+1] != '-')
+                {
+                    check_value = 1;
+                }
+            }
+            if (board[coor_height][coor_width+1] != '-')// 0x1
+            {
+                if ( board[coor_height-1][coor_width] != '-' || board[coor_height-1][coor_width+1] != '-' || board[coor_height-1][coor_width+2] != '-')
+                {
+                    check_value = 1;
+                }
+            }
+            if (board[coor_height][coor_width+2] != '-')// 0x2
+            {
+                if ( board[coor_height-1][coor_width+1] != '-' || board[coor_height-1][coor_width+2] != '-')
+                {
+                    check_value = 1;
+                }
+            }
 
+         }
+
+     }
+    return check_value;
+ }
 
