@@ -28,7 +28,6 @@ int main()
 
 
     init_board(board, height, width);
-    board[0][0] = '1';
     draw_board(board, height, width);
 
 
