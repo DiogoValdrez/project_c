@@ -85,273 +85,264 @@ void draw_board(char board[15][24],int height, int width)
     return ;
 }
 
-void pecas(int id_peca,int id_variante,char board[15][24],int coor_height,int coor_width)
+void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor_width)
 {
-    char peca_id1;
-    switch (id_peca)
+    switch (id_piece)
     {
         case 0:
             break;
         case 1:
-            peca_id1 = '1';
-            switch (id_variante)
+            switch (id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width+1] = id_piece;
                     break;
                 case 3:
-                    board[coor_height][coor_width+2] = peca_id1;
+                    board[coor_height][coor_width+2] = id_piece;
                     break;
                 case 4:
-                    board[coor_height+1][coor_width] = peca_id1;
+                    board[coor_height+1][coor_width] = id_piece;
                     break;
                 case 5:
-                    board[coor_height+1][coor_width+1] = peca_id1;
+                    board[coor_height+1][coor_width+1] = id_piece;
                     break;
                 case 6:
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
                 case 7:
-                    board[coor_height+2][coor_width] = peca_id1;
+                    board[coor_height+2][coor_width] = id_piece;
                     break;
                 case 8:
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
                 case 9:
-                    board[coor_height+2][coor_width+2] = peca_id1;
+                    board[coor_height+2][coor_width+2] = id_piece;
                     break;
                 }
             break;
         case 2:
-            peca_id1 = '2';
-            switch (id_variante)
+            switch (id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height][coor_width+2] = peca_id1;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height][coor_width+2] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
                     break;
                 case 4:
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
                 case 5:
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
                 case 6:
-                    board[coor_height+2][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height+2][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
                 case 7:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
                     break;
                 case 8:
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width] = peca_id1;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+2][coor_width] = id_piece;
                     break;
                 case 9:
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
                     break;
                 case 10:
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
                 case 11:
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
                 case 12:
-                    board[coor_height+1][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height+1][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
 
             }
             break;
         case 3:
-            peca_id1 = '3';
-            switch(id_variante)
+            switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height][coor_width+2] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height][coor_width+2] = id_piece;
                     break;
                 case 2:
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
                     break;
                 case 4:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+2][coor_width] = id_piece;
                     break;
                 case 5:
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
                 case 6:
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
                     break;
             }
             break;
         case 4:
-            peca_id1 = '4';
-            switch(id_variante)
+            switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
                 case 4:
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
                     break;
             }
             break;
         case 5:
-            peca_id1 = '5';
-            switch(id_variante)
+            switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
                     break;
                 case 4:
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
                     break;
             }
             break;
         case 6:
-            peca_id1 = '6';
-            switch(id_variante)
+            switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
                 case 2:
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+2][coor_width+1] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
+                    board[coor_height+2][coor_width+1] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
                     break;
                 case 4:
-                    board[coor_height+1][coor_width+2] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
+                    board[coor_height+1][coor_width+2] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
                     break;
             }
             break;
         case 7:
-            peca_id1 = '7';
-            switch(id_variante)
+            switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height+1][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+2] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height+1][coor_width] = id_piece;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+2] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width] = peca_id1;
-                    board[coor_height][coor_width+1] = peca_id1;
-                    board[coor_height][coor_width+2] = peca_id1;
-                    board[coor_height+2][coor_width] = peca_id1;
-                    board[coor_height+2][coor_width+1] = peca_id1;
-                    board[coor_height+2][coor_width+2] = peca_id1;
-                    board[coor_height+1][coor_width+1] = peca_id1;
+                    board[coor_height][coor_width] = id_piece;
+                    board[coor_height][coor_width+1] = id_piece;
+                    board[coor_height][coor_width+2] = id_piece;
+                    board[coor_height+2][coor_width] = id_piece;
+                    board[coor_height+2][coor_width+1] = id_piece;
+                    board[coor_height+2][coor_width+2] = id_piece;
+                    board[coor_height+1][coor_width+1] = id_piece;
                     break;
             }
             break;
         case 8:
-            peca_id1 = '8';
-            board[coor_height][coor_width] = peca_id1;
-            board[coor_height][coor_width+1] = peca_id1;
-            board[coor_height][coor_width+2] = peca_id1;
-            board[coor_height+1][coor_width] = peca_id1;
-            board[coor_height+1][coor_width+2] = peca_id1;
-            board[coor_height+2][coor_width] = peca_id1;
-            board[coor_height+2][coor_width+1] = peca_id1;
-            board[coor_height+2][coor_width+2] = peca_id1;
+            board[coor_height][coor_width] = id_piece;
+            board[coor_height][coor_width+1] = id_piece;
+            board[coor_height][coor_width+2] = id_piece;
+            board[coor_height+1][coor_width] = id_piece;
+            board[coor_height+1][coor_width+2] = id_piece;
+            board[coor_height+2][coor_width] = id_piece;
+            board[coor_height+2][coor_width+1] = id_piece;
+            board[coor_height+2][coor_width+2] = id_piece;
 
             break;
         default:
