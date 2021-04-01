@@ -8,6 +8,7 @@ Descrição : ...
 #include "board.h"
 #include "pieces.h"
 #include "restric.h"
+//#include "modo_p1.h"
 
 int mult(int value);
 
@@ -29,7 +30,7 @@ int main()
 
     initBoard(board, height, width);
     drawBoard(board, height, width);
-
+    p1(board);
 
     return EXIT_SUCCESS;
 }
