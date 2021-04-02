@@ -269,8 +269,9 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
 }
 
 void sqr_board(char board[15][24],int coor_height,int coor_width, char sqr[3][3]){
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
+    int i, j;
+    for( i = 0; i < 3; i++){
+        for( j = 0; j < 3; j++){
             if(sqr[i][j] != '\0'){
                 board[i+coor_height][j+coor_width] = sqr[i][j];
             }
@@ -278,15 +279,17 @@ void sqr_board(char board[15][24],int coor_height,int coor_width, char sqr[3][3]
     }
 }
 void del_sqr(char sqr[3][3]){
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
+    int i, j;
+    for( i = 0; i < 3; i++){
+        for( j = 0; j < 3; j++){
             sqr[i][j] = '\0';
         }
     }
 }
 void ctrl_Z(char board[15][24],int coor_height,int coor_width){
-    for(int i = coor_height; i < coor_height+3; i++){
-        for(int j = coor_width; j < coor_width+3; j++){
+    int i, j;
+    for( i = coor_height; i < coor_height+3; i++){
+        for( j = coor_width; j < coor_width+3; j++){
             board[i][j] = '-';
         }
     }

@@ -42,7 +42,7 @@ void drawBoard(char board[15][24],int height, int width)
 
     for (k = 0; k < width; k++)
     {
-        char num = k + 'A';
+        char num ='A' + k;
         printf("%c ", num);
     }
     printf("\n");
