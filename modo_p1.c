@@ -5,10 +5,10 @@ int p1(char board[15][24],int height,int width, char sqr[3][3])
 {
     int coor_height = 0;
     int coor_width = 0;
-    int id_var = 0;
+    int id_var ;
     int rep = 0;
     int num_pieces = 0;
-    int id_piece = 0;
+    int id_piece;
     printf("hi");
     srand((unsigned)time(NULL));
     int i, j;
