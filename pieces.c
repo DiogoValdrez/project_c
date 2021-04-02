@@ -280,7 +280,7 @@ void sqr_board(char board[15][24],int coor_height,int coor_width, char sqr[3][3]
 void del_sqr(char sqr[3][3]){
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-            sqr[i][j] = '-';
+            sqr[i][j] = '\0';
         }
     }
 }
