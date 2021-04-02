@@ -26,9 +26,9 @@ void drawBoard(char board[15][24],int height, int width)
     {
         if((height - i) < 10)
         {
-            printf("%d ", (height - i));;
+            printf("%d  ", (height - i));;
         }else{
-            printf("%d", (height - i));;
+            printf("%d ", (height - i));;
         }
 
         for (j = 0; j < width; j++)
@@ -38,7 +38,7 @@ void drawBoard(char board[15][24],int height, int width)
         printf("\n");
     }
 
-    printf("  ");
+    printf("   ");
 
     for (k = 0; k < width; k++)
     {

@@ -29,8 +29,6 @@ int main()
     } while (height < 9 || height > 15 || width < 9 || width > 24 || mult(width)==1 || mult(height)==1);
 
     initBoard(board, height, width);
-    drawBoard(board, height, width);
-    printf("feito");
     p1(board,height, width, sqr);
     drawBoard(board, height, width);
 

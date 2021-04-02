@@ -6,9 +6,9 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
 {
     switch (id_piece)
     {
-        case 0:
+        case '0':
             break;
-        case 1:
+        case '1':
             switch (id_var)
             {
                 case 1:
@@ -40,7 +40,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
                 }
             break;
-        case 2:
+        case '2':
             switch (id_var)
             {
                 case 1:
@@ -65,7 +65,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
                 case 6:
                     sqr[2][1] = id_piece;
-                    sqr[2][1] = id_piece;
+                    sqr[2][2] = id_piece;
                     break;
                 case 7:
                     sqr[0][0] = id_piece;
@@ -94,7 +94,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
 
             }
             break;
-        case 3:
+        case '3':
             switch(id_var)
             {
                 case 1:
@@ -129,7 +129,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
             }
             break;
-        case 4:
+        case '4':
             switch(id_var)
             {
                 case 1:
@@ -158,7 +158,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
             }
             break;
-        case 5:
+        case '5':
             switch(id_var)
             {
                 case 1:
@@ -191,7 +191,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
             }
             break;
-        case 6:
+        case '6':
             switch(id_var)
             {
                 case 1:
@@ -228,7 +228,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
             }
             break;
-        case 7:
+        case '7':
             switch(id_var)
             {
                 case 1:
@@ -251,7 +251,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
             }
             break;
-        case 8:
+        case '8':
             sqr[0][0] = id_piece;
             sqr[0][1] = id_piece;
             sqr[0][2] = id_piece;
