@@ -61,7 +61,7 @@ int p1(char board[15][24],int height,int width, char sqr[3][3])
                             pieces(id_piece,id_var,board,coor_height,coor_width,sqr);
                             break;
                         default:
-                            return EXIT_SUCCESS;
+                            return EXIT_FAILURE;
                             break;
 
                     }
