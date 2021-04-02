@@ -12,12 +12,13 @@ void initBoard(char board[15][24], int height, int width)
         }
 
     }
+    return;
 }
 
 //Function that draws the game board
 void drawBoard(char board[15][24],int height, int width)
 {
-    int i, j;
+    int i, j, k;
 
     printf("\n");
 
@@ -39,12 +40,11 @@ void drawBoard(char board[15][24],int height, int width)
 
     printf("  ");
 
-    for (i = 0; i < width; i++)
+    for (k = 0; k < width; k++)
     {
-        char num = i + 'A';
+        char num = k + 'A';
         printf("%c ", num);
     }
     printf("\n");
-
-    return ;
+    return;
 }

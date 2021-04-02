@@ -2,7 +2,7 @@
 
 /*Function that changes each 3x3 matrix for the piece
 that is suposed to put in it*/
-void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor_width)
+void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor_width,char sqr[3][3])
 {
     switch (id_piece)
     {
@@ -12,31 +12,31 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
             switch (id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = id_piece;
+                    sqr[0][0] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width+1] = id_piece;
+                    sqr[0][1] = id_piece;
                     break;
                 case 3:
-                    board[coor_height][coor_width+2] = id_piece;
+                    sqr[0][2] = id_piece;
                     break;
                 case 4:
-                    board[coor_height+1][coor_width] = id_piece;
+                    sqr[1][0] = id_piece;
                     break;
                 case 5:
-                    board[coor_height+1][coor_width+1] = id_piece;
+                    sqr[1][1] = id_piece;
                     break;
                 case 6:
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
                 case 7:
-                    board[coor_height+2][coor_width] = id_piece;
+                    sqr[2][0] = id_piece;
                     break;
                 case 8:
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
                 case 9:
-                    board[coor_height+2][coor_width+2] = id_piece;
+                    sqr[2][2] = id_piece;
                     break;
                 }
             break;
@@ -44,52 +44,52 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
             switch (id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[0][1] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height][coor_width+2] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[0][2] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[1][1] = id_piece;
                     break;
                 case 4:
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
                 case 5:
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
                 case 6:
-                    board[coor_height+2][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[2][1] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
                 case 7:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[1][0] = id_piece;
                     break;
                 case 8:
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+2][coor_width] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[2][0] = id_piece;
                     break;
                 case 9:
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[1][1] = id_piece;
                     break;
                 case 10:
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
                 case 11:
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
                 case 12:
-                    board[coor_height+1][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[1][2] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
 
             }
@@ -98,34 +98,34 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
             switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height][coor_width+2] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[0][2] = id_piece;
                     break;
                 case 2:
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[2][1] = id_piece;
+                    sqr[2][2] = id_piece;
                     break;
                 case 4:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+2][coor_width] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[2][0] = id_piece;
                     break;
                 case 5:
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
                 case 6:
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[1][2] = id_piece;
+                    sqr[2][2] = id_piece;
                     break;
             }
             break;
@@ -133,28 +133,28 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
             switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[1][1] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
                 case 4:
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[1][2] = id_piece;
+                    sqr[2][1] = id_piece;
+                    sqr[2][2] = id_piece;
                     break;
             }
             break;
@@ -162,32 +162,32 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
             switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[1][1] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[2][1] = id_piece;
+                    sqr[2][2] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[1][1] = id_piece;
                     break;
                 case 4:
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[1][2] = id_piece;
+                    sqr[2][2] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[1][1] = id_piece;
                     break;
             }
             break;
@@ -195,36 +195,36 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
             switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[2][1] = id_piece;
+                    sqr[2][2] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
                 case 2:
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[1][2] = id_piece;
+                    sqr[2][2] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
                 case 3:
-                    board[coor_height+2][coor_width+1] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
+                    sqr[2][1] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[1][2] = id_piece;
                     break;
                 case 4:
-                    board[coor_height+1][coor_width+2] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
+                    sqr[1][2] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[2][1] = id_piece;
                     break;
             }
             break;
@@ -232,39 +232,62 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
             switch(id_var)
             {
                 case 1:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height+1][coor_width] = id_piece;
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+2] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[1][0] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[1][2] = id_piece;
+                    sqr[2][2] = id_piece;
+                    sqr[1][1] = id_piece;
                     break;
                 case 2:
-                    board[coor_height][coor_width] = id_piece;
-                    board[coor_height][coor_width+1] = id_piece;
-                    board[coor_height][coor_width+2] = id_piece;
-                    board[coor_height+2][coor_width] = id_piece;
-                    board[coor_height+2][coor_width+1] = id_piece;
-                    board[coor_height+2][coor_width+2] = id_piece;
-                    board[coor_height+1][coor_width+1] = id_piece;
+                    sqr[0][0] = id_piece;
+                    sqr[0][1] = id_piece;
+                    sqr[0][2] = id_piece;
+                    sqr[2][0] = id_piece;
+                    sqr[2][1] = id_piece;
+                    sqr[2][2] = id_piece;
+                    sqr[1][1] = id_piece;
                     break;
             }
             break;
         case 8:
-            board[coor_height][coor_width] = id_piece;
-            board[coor_height][coor_width+1] = id_piece;
-            board[coor_height][coor_width+2] = id_piece;
-            board[coor_height+1][coor_width] = id_piece;
-            board[coor_height+1][coor_width+2] = id_piece;
-            board[coor_height+2][coor_width] = id_piece;
-            board[coor_height+2][coor_width+1] = id_piece;
-            board[coor_height+2][coor_width+2] = id_piece;
+            sqr[0][0] = id_piece;
+            sqr[0][1] = id_piece;
+            sqr[0][2] = id_piece;
+            sqr[1][0] = id_piece;
+            sqr[1][2] = id_piece;
+            sqr[2][0] = id_piece;
+            sqr[2][1] = id_piece;
+            sqr[2][2] = id_piece;
 
             break;
         default:
-            EXIT_FAILURE;
+            return;
 
     }
-    return;
+}
+
+void sqr_board(char board[15][24],int coor_height,int coor_width, char sqr[3][3]){
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            if(sqr[i][j] != '\0'){
+                board[i+coor_height][j+coor_width] = sqr[i][j];
+            }
+        }
+    }
+}
+void del_sqr(char sqr[3][3]){
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            sqr[i][j] = '-';
+        }
+    }
+}
+void ctrl_Z(char board[15][24],int coor_height,int coor_width){
+    for(int i = coor_height; i < coor_height+3; i++){
+        for(int j = coor_width; j < coor_width+3; j++){
+            board[i][j] = '-';
+        }
+    }
 }
