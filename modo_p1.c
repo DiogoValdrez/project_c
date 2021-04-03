@@ -55,7 +55,7 @@ int p1(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                             pieces(id_piece,id_var,board,coor_height,coor_width,sqr);
                             break;
                         case '7':
-                            id_var = rand()%1 + 1;
+                            id_var = rand()%2 + 1;
                             pieces(id_piece,id_var,board,coor_height,coor_width,sqr);
                             break;
                         case '8':
@@ -68,16 +68,16 @@ int p1(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                     }
                     sqr_board(board, coor_height, coor_width, sqr);
                     rep+=1;
-                    printf("(%d/",!(restric01(board, coor_height, coor_width)));
+                    printf("(%d/",!(restric01(board, coor_height, coor_width, width)));
                     printf("%d)", rep);
-                }while(!(restric01(board, coor_height, coor_width)) && (rep < 3));
-                if((rep == 3) && !(restric01(board, coor_height, coor_width))){
+                }while(!(restric01(board, coor_height, coor_width, width)) && (rep < 3));
+                if((rep == 3) && !(restric01(board, coor_height, coor_width, width))){
                     id_piece = '1';
                     id_var = 5;
                     ctrl_Z(board,coor_height,coor_width);
                     del_sqr(sqr);
                     pieces(id_piece,id_var,board,coor_height,coor_width,sqr);
-                    sqr_board(board, coor_height, coor_width, sqr); 
+                    sqr_board(board, coor_height, coor_width, sqr);
                 }
                 if(id_piece != '0'){
                     pie_types[(int)id_piece-49] += 1;
