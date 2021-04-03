@@ -1,7 +1,7 @@
 #include "modo_p1.h"
 
 
-int p1(char board[15][24],int height,int width, char sqr[3][3])
+int p1(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8])
 {
     int coor_height;
     int coor_width;
@@ -79,11 +79,14 @@ int p1(char board[15][24],int height,int width, char sqr[3][3])
                     pieces(id_piece,id_var,board,coor_height,coor_width,sqr);
                     sqr_board(board, coor_height, coor_width, sqr); 
                 }
+                if(id_piece != '0'){
+                    pie_types[(int)id_piece-49] += 1;
+                }
                 num_pieces+=1;
             }else{
-                return num_pieces;
+                return EXIT_SUCCESS;
             }
         }
     }
-    return num_pieces;
+    return EXIT_SUCCESS;
 }

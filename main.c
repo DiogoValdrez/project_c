@@ -19,6 +19,7 @@ int main()
     int height, width;
     char board[15][24];
     char sqr[3][3];
+    int pie_types[8] = {0,0,0,0,0,0,0,0};
     do//talvez fazer uma função disto
     {
         printf("Imput the height and width of the board: \n");
@@ -29,9 +30,8 @@ int main()
     } while (height < 9 || height > 15 || width < 9 || width > 24 || mult(width)==1 || mult(height)==1);
 
     initBoard(board, height, width);
-    p1(board,height, width, sqr);
+    p1(board,height, width, sqr, pie_types);
     drawBoard(board, height, width);
-
     return EXIT_SUCCESS;
 }
 //Function that checks whether the value is a multiple of 3
