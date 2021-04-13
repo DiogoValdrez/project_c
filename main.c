@@ -9,6 +9,7 @@ Descrição : ...
 #include "pieces.h"
 #include "restric.h"
 #include "modo_p1.h"
+#include "modo_p2.h"
 #include <unistd.h>
 #include <stdio.h>
 
