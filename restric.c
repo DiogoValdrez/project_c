@@ -88,7 +88,7 @@ int restric2(int height, int width)
     return max_pieces;
 }
 
-int restric3(pie_types[8])
+int restric3(int pie_types[8])
 {
     int i;
     for (i=1;i<8;i++)

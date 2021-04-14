@@ -124,6 +124,7 @@ int main(int argc, char *argv[])
     initBoard(board, height, width);
     p1(board,height, width, sqr, pie_types);
     drawBoard(board, height, width);
+    choose_piece(pie_types);
 
     return EXIT_SUCCESS;
 }
