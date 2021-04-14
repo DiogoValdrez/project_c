@@ -21,6 +21,22 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                 ctrl_Z(board,coor_height,coor_width);
                 del_sqr(sqr);
                 id_piece = choose_piece(pie_types);
+                if (id_piece != 0)
+                {
+                    id_var = choose_rand_variant(id_piece);
+                }
+                pieces(id_piece,id_var,board,coor_height,coor_width,sqr);
+                if (!(restric01(char board[15][24], int coor_height,int coor_width, int width))
+                {
+                    do
+                    {
+                        switch(id_piece)
+                        {
+                            case
+                        }
+
+                    }while(!(restric01(char board[15][24], int coor_height,int coor_width, int width)));
+                }
 
             }while();
         }

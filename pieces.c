@@ -308,6 +308,45 @@ int choose_piece(int pie_types[8])
             return id_piece;
         }
     }while(pie_types[id_piece - 1] == 0);
-    pie_types[id_piece - 1] --;
     return id_piece;
 }
+
+
+int choose_rand_variant(int id_piece)
+{
+    int id_var;
+    srand((unsigned)time(NULL));
+    switch (id_piece)
+    {
+        case 1:
+            id_var = rand()%9 + 1;
+            break;
+        case 2:
+            id_var = rand()%12 + 1;
+            break;
+        case 3:
+            id_var = rand()%6 + 1;
+            break;
+        case 4:
+            id_var = rand()%4 + 1;
+            break;
+        case 5:
+            id_var = rand()%4 + 1;
+            break;
+        case 6:
+            id_var = rand()%4 + 1;
+            break;
+        case 7:
+            id_var = rand()%2 + 1;
+            break;
+        case 8:
+            id_var = 1;
+            break;
+        default:
+            id_var = 1;
+    }
+    return id_var;
+}
+
+
+
