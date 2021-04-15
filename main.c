@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 
     //Resttriction 2 which apllies if modo_posicion = 2, maybe make a
     //Separate function for this
-    if (modo_posicion== 2)
+    /*if (modo_posicion== 2)
     {
         for(i=1;i<8;i++)
         {
@@ -118,11 +118,14 @@ int main(int argc, char *argv[])
                 return EXIT_FAILURE;
             }
         }
-    }
+    }*/
+    printf("Befora");
     char board[15][24];
     char sqr[3][3];
     initBoard(board, height, width);
-    p1(board,height, width, sqr, pie_types);
+    //p1(board,height, width, sqr, pie_types);
+    p2(board,height, width, sqr, pie_types);
+    printf("After");
     drawBoard(board, height, width);
     choose_piece(pie_types);
 

@@ -1,5 +1,5 @@
-#ifndef MODO_P1_HPP
-#define MODO_P1_HPP
+#ifndef MODO_P2_HPP
+#define MODO_P2_HPP
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
