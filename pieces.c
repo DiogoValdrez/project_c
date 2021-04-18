@@ -89,7 +89,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
                 case 12:
                     sqr[1][2] = id_piece;
-                    sqr[1][2] = id_piece;
+                    sqr[2][2] = id_piece;
                     break;
 
             }
@@ -296,57 +296,8 @@ void ctrl_Z(char board[15][24],int coor_height,int coor_width)
     }
 }
 
-int choose_piece(int pie_types[8])
-{
-    int id_piece;
-    srand((unsigned)time(NULL));
-    do
-    {
-        id_piece = rand()%9;
-        if (id_piece == 0)
-        {
-            return id_piece;
-        }
-    }while(pie_types[id_piece - 1] == 0);
-    return id_piece;
-}
 
 
-int choose_rand_variant(int id_piece)
-{
-    int id_var;
-    srand((unsigned)time(NULL));
-    switch (id_piece)
-    {
-        case 1:
-            id_var = rand()%9 + 1;
-            break;
-        case 2:
-            id_var = rand()%12 + 1;
-            break;
-        case 3:
-            id_var = rand()%6 + 1;
-            break;
-        case 4:
-            id_var = rand()%4 + 1;
-            break;
-        case 5:
-            id_var = rand()%4 + 1;
-            break;
-        case 6:
-            id_var = rand()%4 + 1;
-            break;
-        case 7:
-            id_var = rand()%2 + 1;
-            break;
-        case 8:
-            id_var = 1;
-            break;
-        default:
-            id_var = 1;
-    }
-    return id_var;
-}
 
 
 
