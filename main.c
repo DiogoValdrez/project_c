@@ -14,6 +14,7 @@ Descrição : ...
 #include "modo_j0.h"
 #include "modo_j1.h"
 #include "modo_p2.h"
+#include "modo_d1.h"
 #include <unistd.h>
 #include <stdio.h>
 
@@ -132,6 +133,7 @@ int main(int argc, char *argv[])
     {
     case 0:
         j0(board, height, width, sqr, pie_types, modo_posicion);
+        d1(board, height , width);
         break;
     case 1:
         j1(board, height, width, sqr, pie_types, modo_posicion);
