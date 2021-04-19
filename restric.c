@@ -87,3 +87,35 @@ int restric2(int height, int width)
     int max_pieces = (height * width)/9;
     return max_pieces;
 }
+
+int restric3(int pie_types[8])
+{
+    int i;
+    for (i=1;i<8;i++)
+        {
+            if (pie_types[i]>pie_types[i-1])
+            {
+                return 0;
+            }
+        }
+    return 1;
+}
+
+int restric4(int height, int width, int pie_types[8])
+{
+    int i, max_pieces,n_pieces = 0;
+
+    for (i=0;i<8;i++)
+    {
+        n_pieces = n_pieces + pie_types[i];
+    }
+    max_pieces = (height * width / 9) / 2;
+    if (n_pieces <= max_pieces)
+    {
+        return 1;
+    }else
+    {
+        return 0;
+    }
+
+}

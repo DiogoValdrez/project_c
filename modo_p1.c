@@ -3,15 +3,15 @@
 
 int p1(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8])
 {
-    int coor_height;
-    int coor_width;
+    int coor_height = 0;
+    int coor_width = 0;
     int id_var;
     int rep;
     int num_pieces = 0;
     char id_piece;
     srand((unsigned)time(NULL));
 
-    
+
     for(coor_height = 0; coor_height < height; coor_height += 3)
     {
         printf("\n\n ||new line %d||\n", coor_height);
@@ -57,7 +57,7 @@ int p1(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                             pieces(id_piece,id_var,board,coor_height,coor_width,sqr);
                             break;
                         case '7':
-                            id_var = rand()%2 + 1;                           
+                            id_var = rand()%2 + 1;
                             pieces(id_piece,id_var,board,coor_height,coor_width,sqr);
                             break;
                         case '8':

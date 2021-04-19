@@ -9,6 +9,7 @@ Descrição : ...
 #include "pieces.h"
 #include "restric.h"
 #include "modo_p1.h"
+#include "modo_p2.h"
 #include <unistd.h>
 #include <stdio.h>
 
@@ -105,25 +106,12 @@ int main(int argc, char *argv[])
     {
         printf("Piece %d = %d\n",i+1,pie_types[i]);
     }
-
-    //Resttriction 2 which apllies if modo_posicion = 2, maybe make a
-    //Separate function for this
-    if (modo_posicion== 2)
-    {
-        for(i=1;i<8;i++)
-        {
-            if (pie_types[i] > pie_types[i-1])
-            {
-                return EXIT_FAILURE;
-            }
-        }
-    }
     char board[15][24];
     char sqr[3][3];
     initBoard(board, height, width);
-    p1(board,height, width, sqr, pie_types);
+    //p1(board,height, width, sqr, pie_types);
+    p2(board,height, width, sqr, pie_types);
     drawBoard(board, height, width);
-
     return EXIT_SUCCESS;
 }
 //Function that checks whether the value is a multiple of 3
