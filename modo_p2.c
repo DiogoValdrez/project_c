@@ -1,5 +1,4 @@
 #include "modo_p2.h"
-#include <time.h>
 
 int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8])
 {
@@ -15,7 +14,7 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
     int rep_8 = 0, rep_1000 = 0;
     srand((unsigned)time(NULL));
     int pie_types_save [8] ;
-    int l;
+    int l, i;
     for (l=0;l<8;l++)
     {
         pie_types_save[l] = pie_types[l];
@@ -234,6 +233,9 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
         return EXIT_FAILURE;
     }
     }while(rep_8 == 8 && rep_1000<1000);
+    for(i= 0; i < 8; i++){
+        pie_types[i] = pie_types_save[i];
+    }
 
     return EXIT_SUCCESS;
 }
