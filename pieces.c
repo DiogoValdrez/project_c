@@ -89,7 +89,7 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
                     break;
                 case 12:
                     sqr[1][2] = id_piece;
-                    sqr[1][2] = id_piece;
+                    sqr[2][2] = id_piece;
                     break;
 
             }
@@ -286,7 +286,8 @@ void del_sqr(char sqr[3][3]){
         }
     }
 }
-void ctrl_Z(char board[15][24],int coor_height,int coor_width){
+void ctrl_Z(char board[15][24],int coor_height,int coor_width)
+{
     int i, j;
     for( i = coor_height; i < coor_height+3; i++){
         for( j = coor_width; j < coor_width+3; j++){
@@ -294,3 +295,9 @@ void ctrl_Z(char board[15][24],int coor_height,int coor_width){
         }
     }
 }
+
+
+
+
+
+

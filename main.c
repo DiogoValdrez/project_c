@@ -13,6 +13,7 @@ Descrição : ...
 #include "modo_p1.h"
 #include "modo_j0.h"
 #include "modo_j1.h"
+#include "modo_p2.h"
 #include <unistd.h>
 #include <stdio.h>
 
