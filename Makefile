@@ -1,9 +1,9 @@
 CC=gcc
 CFLAGS= -Wall -g
 
-PROJECT= main
+PROJECT= wargame
 
-OBJ_FILES= $(PROJECT).o board.o modo_p1.o pieces.o restric.o
+OBJ_FILES= main.o board.o modo_p1.o pieces.o restric.o modo_j0.o modo_j1.o
 
 $(PROJECT): $(OBJ_FILES)
 	gcc $(CFLAGS) -o $(PROJECT) $(OBJ_FILES) 

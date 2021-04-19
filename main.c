@@ -5,10 +5,14 @@ Descrição : ...
 */
 //introdução em ingles?
 
+
+//quando acabar de ler o modo de jogo salta para função, o modo de pos fica uma variavel
 #include "board.h"
 #include "pieces.h"
 #include "restric.h"
 #include "modo_p1.h"
+#include "modo_j0.h"
+#include "modo_j1.h"
 #include <unistd.h>
 #include <stdio.h>
 
@@ -18,8 +22,10 @@ int mult(int value);
 int main(int argc, char *argv[])
 {
     int option;
-    int height = 9,width = 9, modo_game=0, modo_posicion = 1, modo_shot = 1;
+    int height = 9,width = 9, modo_game=0, modo_posicion = 1, modo_shot = 1, i;
     int pie_types[8] = {0,0,0,0,0,0,0,0};
+    char board[15][24];
+    char sqr[3][3];
     while((option = getopt(argc, argv, "ht:j:p:d:1:2:3:4:5:6:7:8:")) != -1)
     {
       switch(option){
@@ -36,15 +42,15 @@ int main(int argc, char *argv[])
              printf("Height :%d\n", height);
              printf("Width :%d\n", width);
              break;
-         case 'j':
+        case 'j':
             sscanf(optarg, "%d", &modo_game);
             printf("Modo jogo = %d\n", modo_game);
             break;
-         case 'p':
+        case 'p':
             sscanf(optarg, "%d", &modo_posicion);
             printf("Modo posicionamento = %d\n", modo_posicion);
             break;
-         case 'd':
+        case 'd':
             if (modo_game==2)
             {
                 sscanf(optarg, "%d", &modo_shot);
@@ -54,16 +60,16 @@ int main(int argc, char *argv[])
                 printf("Print help message\n");
             }
             break;
-         case '1':
-         case '2':
-         case '3':
-         case '4':
-         case '5':
-         case '6':
-         case '7':
-         case '8':
-         if (modo_game == 2 || modo_posicion == 2)
-        {
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+            if (modo_game == 2 || modo_posicion == 2)
+            {
                 switch (option)
                 {
                     case '1':
@@ -99,12 +105,12 @@ int main(int argc, char *argv[])
             break;
       }
     }
-    printf("Pieces\n");
+    /*printf("Pieces\n");
     int i;
     for (i= 0; i<8;i++)
     {
         printf("Piece %d = %d\n",i+1,pie_types[i]);
-    }
+    }*/
 
     //Resttriction 2 which apllies if modo_posicion = 2, maybe make a
     //Separate function for this
@@ -118,12 +124,22 @@ int main(int argc, char *argv[])
             }
         }
     }
-    char board[15][24];
-    char sqr[3][3];
-    initBoard(board, height, width);
-    p1(board,height, width, sqr, pie_types);
-    drawBoard(board, height, width);
 
+
+    initBoard(board, height, width);
+    switch(modo_game)
+    {
+    case 0:
+        j0(board, height, width, sqr, pie_types, modo_posicion);
+        break;
+    case 1:
+        j1(board, height, width, sqr, pie_types, modo_posicion);
+        break;
+    case 2:
+        printf("Modo jogo = %d\n", modo_game);
+        break;
+    }
+    drawBoard(board, height, width);
     return EXIT_SUCCESS;
 }
 //Function that checks whether the value is a multiple of 3

@@ -7,6 +7,6 @@
 #include "pieces.h"
 
 
-int p1(char board[15][24],int height,int width,char sqr[3][3], int pie_types[8]);
+int p1(char board[15][24], int height, int width, char sqr[3][3], int pie_types[8]);
 
 #endif
