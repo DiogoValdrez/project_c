@@ -1,6 +1,6 @@
 #include "modo_j1.h"
 
-int j1(char board[15][24], int height, int width, char sqr[3][3], int pie_types[8], int modo_posicion)
+int mj1(char board[15][24], int height, int width, char sqr[3][3], int pie_types[8], int modo_posicion)
 {
     char character;
     int y, x, i, num_blocks = 0, tries = 0, shooted = 0;
@@ -31,6 +31,6 @@ int j1(char board[15][24], int height, int width, char sqr[3][3], int pie_types[
     tf = (unsigned)time(NULL);
     dt = tf - ti;
     printf("Fim de jogo: %d jogadas em ", tries);
-    printf("%d segunos", dt);
+    printf("%d segundos", dt);
     return EXIT_SUCCESS;
 }
