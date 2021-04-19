@@ -59,5 +59,6 @@ obj
 bin
 launch.json
 tasks.json
+wargame
 main
 
