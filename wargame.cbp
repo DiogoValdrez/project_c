@@ -40,6 +40,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="modo_d1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modo_d1.h" />
 		<Unit filename="modo_p1.c">
 			<Option compilerVar="CC" />
 		</Unit>

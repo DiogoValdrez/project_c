@@ -14,6 +14,7 @@ Descrição : ...
 #include "modo_j0.h"
 #include "modo_j1.h"
 #include "modo_p2.h"
+#include "modo_d1.h"
 #include <unistd.h>
 #include <stdio.h>
 
