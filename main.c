@@ -24,7 +24,7 @@ int mult(int value);
 int main(int argc, char *argv[])
 {
     int option;
-    int height = 9,width = 9, modo_game=0, modo_posicion = 1, modo_shot = 1, i;
+    int height = 9,width = 9, modo_game=0, modo_posicion = 1, modo_shot = 1;
     int pie_types[8] = {0,0,0,0,0,0,0,0};
     char board[15][24];
     char sqr[3][3];
@@ -114,29 +114,15 @@ int main(int argc, char *argv[])
         printf("Piece %d = %d\n",i+1,pie_types[i]);
     }*/
 
-    //Resttriction 2 which apllies if modo_posicion = 2, maybe make a
-    //Separate function for this
-    if (modo_posicion== 2)
-    {
-        for(i=1;i<8;i++)
-        {
-            if (pie_types[i] > pie_types[i-1])
-            {
-                return EXIT_FAILURE;
-            }
-        }
-    }
-
 
     initBoard(board, height, width);
     switch(modo_game)
     {
     case 0:
-        j0(board, height, width, sqr, pie_types, modo_posicion);
-        d1(board, height , width);
+        mj0(board, height, width, sqr, pie_types, modo_posicion);
         break;
     case 1:
-        j1(board, height, width, sqr, pie_types, modo_posicion);
+        mj1(board, height, width, sqr, pie_types, modo_posicion);
         break;
     case 2:
         printf("Modo jogo = %d\n", modo_game);

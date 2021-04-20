@@ -5,5 +5,5 @@
 #include "modo_p1.h"
 #include "modo_p2.h"
 
-int j0(char board[15][24], int height, int width, char sqr[3][3], int pie_types[8], int modo_posicion);
+int mj0(char board[15][24], int height, int width, char sqr[3][3], int pie_types[8], int modo_posicion);
 #endif
