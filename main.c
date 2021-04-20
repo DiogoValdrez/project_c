@@ -7,6 +7,8 @@ Descrição : ...
 
 
 //quando acabar de ler o modo de jogo salta para função, o modo de pos fica uma variavel
+#include <unistd.h>
+#include <stdio.h>
 #include "board.h"
 #include "pieces.h"
 #include "restric.h"
@@ -15,8 +17,7 @@ Descrição : ...
 #include "modo_j1.h"
 #include "modo_p2.h"
 #include "modo_d1.h"
-#include <unistd.h>
-#include <stdio.h>
+#include "modo_j2.h"
 
 int mult(int value);
 
@@ -125,7 +126,7 @@ int main(int argc, char *argv[])
         mj1(board, height, width, sqr, pie_types, modo_posicion);
         break;
     case 2:
-        printf("Modo jogo = %d\n", modo_game);
+        mj2(board, height, width, sqr, modo_shot);
         break;
     }
     drawBoard(board, height, width);
