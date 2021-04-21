@@ -1,7 +1,5 @@
 #include "modo_d2.h"
 
-int check_matrix_piece(char sqr_piece_save[3][3]);
-
 int d2(int height ,int width, int pie_types[8])
 {
     int i,j;
