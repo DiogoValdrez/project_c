@@ -95,7 +95,8 @@ int restric3(int pie_types[8])
         {
             if (pie_types[i]>pie_types[i-1])
             {
-                return 0;
+                printf("-1\n");
+                exit(0);
             }
         }
     return 1;
@@ -115,7 +116,8 @@ int restric4(int height, int width, int pie_types[8])
         return 1;
     }else
     {
-        return 0;
+        printf("-1\n");
+        exit(0);
     }
 
 }
