@@ -14,9 +14,8 @@ int mj1(char board[15][24], int height, int width, char sqr[3][3], int pie_types
     }
     for(i = 0; i < 8; i++){
         num_blocks = num_blocks + (i+1)*pie_types[i];
-        //printf("Types: %d", pie_types[i]);
     }
-    printf("NUmber of blocks: %d", num_blocks);
+    printf("Number of blocks: %d", num_blocks);
     drawBoard(board, height, width);
     ti = (unsigned)time(NULL);
     while(shooted < num_blocks){
