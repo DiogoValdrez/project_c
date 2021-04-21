@@ -10,6 +10,8 @@ int d1(int height ,int width,int pie_types[8])
     int tries = 0;
     int i, j, y, shot, remain = 0;
     char x, character;
+    int tf, ti, dt;
+    ti = (unsigned)time(NULL);
     for (i=0;i<height;i++)
     {
         for (j=0;j<width;j++)
@@ -48,8 +50,12 @@ int d1(int height ,int width,int pie_types[8])
                 remain = 1;
             }
         }
-        shot_board[height_rand_coord][width_rand_coord] = '-';
+        shot_board[height_rand_coord][width_rand_coord] = character;
     }while(remain);
-    printf("Tries: %d\n", tries);
+    tf = (unsigned)time(NULL);
+    dt = tf - ti;
+    printf("Fim de jogo: %d jogadas ", tries);
+    printf("em %d segundos.", dt);
+    drawBoard(shot_board, height, width);
     return EXIT_SUCCESS;
 }

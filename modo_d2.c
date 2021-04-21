@@ -11,6 +11,8 @@ int d2(int height ,int width, int pie_types[8])
     char character, x;
     int remain, first_shot;
     int remaining_pie[8];
+    int tf, ti, dt;
+    ti = (unsigned)time(NULL);
     for (i=0;i<8;i++)
     {
         remaining_pie[i] = pie_types[i] * (i+1);
@@ -38,7 +40,10 @@ int d2(int height ,int width, int pie_types[8])
             }
             if (remain == 0)
             {
-                printf("Tries: %d", tries);
+                tf = (unsigned)time(NULL);
+                dt = tf - ti;
+                printf("Fim de jogo: %d jogadas ", tries);
+                printf("em %d segundos.", dt);
                 drawBoard(shot_board, height, width);
                 return EXIT_SUCCESS;
             }
@@ -248,6 +253,11 @@ int d2(int height ,int width, int pie_types[8])
 
         }
     }
+    tf = (unsigned)time(NULL);
+    dt = tf - ti;
+    printf("Fim de jogo: %d jogadas ", tries);
+    printf("em %d segundos.", dt);
+    drawBoard(shot_board, height, width);
     return EXIT_SUCCESS;
 }
 
