@@ -260,4 +260,3 @@ int d2(int height ,int width, int pie_types[8])
     drawBoard(shot_board, height, width);
     return EXIT_SUCCESS;
 }
-

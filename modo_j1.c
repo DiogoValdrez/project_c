@@ -8,6 +8,10 @@ int mj1(char board[15][24], int height, int width, char sqr[3][3], int pie_types
     if(modo_posicion==1){
         p1(board, height, width, sqr, pie_types);
     }else if (modo_posicion==2){
+        for(i = 0; i < 8; i++){
+            printf(" %d", pie_types[i]);
+        }
+        printf("\n");
         p2(board, height, width, sqr, pie_types); 
     }else{
         return EXIT_FAILURE;
@@ -15,12 +19,10 @@ int mj1(char board[15][24], int height, int width, char sqr[3][3], int pie_types
     for(i = 0; i < 8; i++){
         num_blocks = num_blocks + (i+1)*pie_types[i];
     }
-    printf("Number of blocks: %d", num_blocks);
-    drawBoard(board, height, width);
     ti = (unsigned)time(NULL);
     while(shooted < num_blocks){
         scanf(" %c%d", &character, &y);//fazer check se scanf esta bem com um if
-        x = (int)character - 97;
+        x = (int)character - 65;
         printf("%c\n", board[height-y][x]);
         if(board[height-y][x] != '-'){//resolver problema dos already shooted
             shooted ++;   

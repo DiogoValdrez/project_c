@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -Wall -g
+CFLAGS= -Wall -std=c11 -O3
 
 PROJECT= wargame
 

@@ -148,7 +148,6 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                                     sqr_board(board, coor_height, coor_width, sqr);
                                     if (restric01( board, coor_height, coor_width, width))
                                     {
-                                        printf("%c %d\n", id_piece, id_var);
                                         break;
                                     }
                                 }

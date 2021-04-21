@@ -5,6 +5,7 @@ Descrição : ...
 
 #include <unistd.h>
 #include <stdio.h>
+#include <getopt.h>
 #include "board.h"
 #include "pieces.h"
 #include "restric.h"
@@ -21,7 +22,7 @@ int mult(int value);
 
 int main(int argc, char *argv[])
 {
-    int option;
+    int option, i;
     int height = 9,width = 9, modo_game = 0, modo_posicion = 1, modo_shot = 1, nothelped = 1;
     int pie_types[8] = {0,0,0,0,0,0,0,0};
     char board[15][24], sqr[3][3];
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
     {
       switch(option){
         case 'h':
-            printf("Print a help message\n");
+            printf("* Print a help message\n");
             nothelped = 0;
             break;
         case 't':
@@ -40,8 +41,6 @@ int main(int argc, char *argv[])
                  height = 9;
                  width = 9;
              }
-             printf("Height :%d\n", height);
-             printf("Width :%d\n", width);
              break;
         case 'j':
             sscanf(optarg, "%d", &modo_game);
@@ -50,13 +49,7 @@ int main(int argc, char *argv[])
             sscanf(optarg, "%d", &modo_posicion);
             break;
         case 'd':
-            if (modo_game==2)
-            {
-                sscanf(optarg, "%d", &modo_shot);
-            }else if(nothelped){
-                printf("Print help message\n");
-                nothelped = 0;
-            }
+            sscanf(optarg, "%d", &modo_shot);
             break;
         case '1':
         case '2':
@@ -96,7 +89,7 @@ int main(int argc, char *argv[])
                         break;
                 }
             }else if(modo_posicion == 1 && nothelped){
-                printf("Print help message\n");
+                printf(" *Print help message\n");
                 nothelped = 0;
             }
         break;
@@ -107,15 +100,35 @@ int main(int argc, char *argv[])
     {
     case 0:
         initBoard(board, height, width);
+        printf("* ================================\n");
+        printf("* Modo de Jogo 0\n");
+        printf("* ================================\n");
+        printf("%dx%d", height, width);
         mj0(board, height, width, sqr, pie_types, modo_posicion);
         drawBoard(board, height, width);
         break;
     case 1:
         initBoard(board, height, width);
+        printf("* ================================\n");
+        printf("* Modo de Jogo 1\n");
+        printf("* Insira as coordenadas de disparo\n");
+        printf("* ================================\n");
+        printf("%dx%d", height, width);
         mj1(board, height, width, sqr, pie_types, modo_posicion);
         drawBoard(board, height, width);
         break;
     case 2:
+        printf("* ==================================================\n");
+        printf("* Modo de Jogo 2\n");
+        printf("* Modo de disparo %d\n", modo_shot);
+        printf("* Crie um tabuleiro com as características indicadas\n");
+        printf("* Responda aos disparos do programa\n");
+        printf("* ==================================================\n");
+        printf("%dx%d", height, width);
+        for(i = 0; i < 8; i++){
+            printf(" %d", pie_types[i]);
+        }
+        printf("\n");
         mj2(height, width, modo_shot, pie_types);
         break;
     }
@@ -131,3 +144,12 @@ int mult(int value)
         return 1;
     }
 }
+/*
+if (modo_game==2)
+            {  
+                sscanf(optarg, "%d", &modo_shot);
+            }else if(nothelped){
+                printf("* Print help message\n");
+                nothelped = 0;
+            }
+*/

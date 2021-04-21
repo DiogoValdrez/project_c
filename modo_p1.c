@@ -7,6 +7,7 @@ int p1(char board[15][24], int height ,int width, char sqr[3][3], int pie_types[
     int coor_width = 0;
     int id_var;
     int rep;
+    int i;
     int num_pieces = 0;
     char id_piece;
     srand((unsigned)time(NULL));
@@ -81,9 +82,17 @@ int p1(char board[15][24], int height ,int width, char sqr[3][3], int pie_types[
                 }
                 num_pieces+=1;
             }else{
+                for(i = 0; i < 8; i++){
+                    printf(" %d", pie_types[i]);
+                }
+                printf("\n");
                 return EXIT_SUCCESS;
             }
         }
     }
+    for(i = 0; i < 8; i++){
+        printf(" %d", pie_types[i]);
+    }
+    printf("\n");
     return EXIT_SUCCESS;
 }
