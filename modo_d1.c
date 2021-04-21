@@ -1,31 +1,15 @@
 #include "modo_d1.h"
 
-int d1(char board[15][24], int height ,int width)
+int d1(int height ,int width,int pie_types[8])
 {
     srand((unsigned)time(NULL));
     char shot_board[15][24];
-    char pieces_board_save[15][24];
-    char pieces_board[15][24];
+    int remaining_pie[8];
     int height_rand_coord;
     int width_rand_coord;
-    int shot_and_board_equal = 0, piece_boards_equal = 0;
     int tries = 0;
-
-    int i,j;
-    for (i=0;i<height;i++)
-    {
-        for (j=0;j<width;j++)
-        {
-            pieces_board[i][j] = ' ';
-            if (board[i][j] != '-' )
-            {
-                pieces_board_save[i][j] = board[i][j];
-            }else
-            {
-                pieces_board_save[i][j] = ' ';
-            }
-        }
-    }
+    int i, j, y, shot, remain = 0;
+    char x, character;
     for (i=0;i<height;i++)
     {
         for (j=0;j<width;j++)
@@ -33,40 +17,39 @@ int d1(char board[15][24], int height ,int width)
             shot_board[i][j] = ' ';
         }
     }
+    for (i=0;i<8;i++)
+    {
+        remaining_pie[i] = pie_types[i] * (i+1);
+    }
+
     do
     {
+        remain = 0;
+
         tries ++;
         do
         {
             height_rand_coord = rand()%height;
             width_rand_coord = rand()%width;
         }while(shot_board[height_rand_coord][width_rand_coord] != ' ');
-        if (shot_board[height_rand_coord][width_rand_coord] == ' ')
+        x = width_rand_coord + 'A';
+        y = height - height_rand_coord;
+        printf("%c%d\n", x, y);
+        scanf(" %c", &character);
+        if (character != '-')
         {
-            shot_board[height_rand_coord][width_rand_coord] = board[height_rand_coord][width_rand_coord];
-            if (board[height_rand_coord][width_rand_coord] != '-')
+            shot = (int)character - 49;
+            remaining_pie[shot] -= 1;
+        }
+        for (i=0;i<8;i++)
+        {
+            if (remaining_pie[i] != 0)
             {
-                pieces_board[height_rand_coord][width_rand_coord] = board[height_rand_coord][width_rand_coord];
+                remain = 1;
             }
         }
-        shot_and_board_equal = 1;
-        piece_boards_equal = 1;
-        for (i=0;i<height;i++)
-        {
-            for (j=0;j<width;j++)
-            {
-                if (shot_board[i][j] != board[i][j])
-                {
-                    shot_and_board_equal = 0;
-                }
-                if (pieces_board[i][j] != pieces_board_save[i][j])
-                {
-                    piece_boards_equal = 0;
-                }
-            }
-        }
-    }while(!(piece_boards_equal)  && !(shot_and_board_equal));
-    drawBoard(pieces_board,height, width);
-    printf("Tries: %d", tries);
+        shot_board[height_rand_coord][width_rand_coord] = '-';
+    }while(remain);
+    printf("Tries: %d\n", tries);
     return EXIT_SUCCESS;
 }

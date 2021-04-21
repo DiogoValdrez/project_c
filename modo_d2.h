@@ -1,5 +1,5 @@
-#ifndef MODO_D1_HPP
-#define MODO_D1_HPP
+#ifndef MODO_D2_HPP
+#define MODO_D2_HPP
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -7,6 +7,7 @@
 #include "pieces.h"
 #include "board.h"
 
-int d1(int height ,int width,int pie_types[8]);
+int d2( int height, int width, int pie_types[8]);
 
 #endif
+
