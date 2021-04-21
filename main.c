@@ -15,6 +15,7 @@ Descrição : ...
 #include "modo_j2.h"
 #include "modo_d1.h"
 #include "modo_d2.h"
+#include "modo_d3.h"
 
 int mult(int value);
 
