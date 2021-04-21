@@ -5,6 +5,7 @@
 #include <time.h>
 #include "modo_d1.h"
 #include "board.h"
+#include "modo_d2.h"
 
-int mj2(char board[15][24], int height, int width, int pie_types[8], int modo_shot);
+int mj2(int height, int width, int modo_shot, int pie_types[8]);
 #endif

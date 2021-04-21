@@ -44,6 +44,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="modo_d1.h" />
+		<Unit filename="modo_j0.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modo_j0.h" />
+		<Unit filename="modo_j1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modo_j1.h" />
+		<Unit filename="modo_j2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modo_j2.h" />
 		<Unit filename="modo_p1.c">
 			<Option compilerVar="CC" />
 		</Unit>
