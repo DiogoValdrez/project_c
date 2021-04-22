@@ -1,6 +1,11 @@
 #include "board.h"
 
-//Function that initializes the game board
+/** \brief Função que inicializa o tabuleiro  com -
+ *
+ * \param board[15][24] char -> matriz onde está o tabuleiro
+ * \param height int -> altura do tabuleiro
+ * \param width int -> largura do tabuleiro
+ */
 void initBoard(char board[15][24], int height, int width)
 {
     int i, j;
@@ -15,7 +20,12 @@ void initBoard(char board[15][24], int height, int width)
     return;
 }
 
-//Function that draws the game board
+/** \brief Função que coloca o tabuleiro no terminal
+ *
+ * \param board[15][24] char -> matriz onde está o tabuleiro
+ * \param height int -> altura do tabeuleiro
+ * \param width int -> largura do tabuleiro
+ */
 void drawBoard(char board[15][24],int height, int width)
 {
     int i, j, k;
