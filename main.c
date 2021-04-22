@@ -1,6 +1,7 @@
 /*Batalha naval
 Autores: Diogo Valdrez 99914, Pedro Raposo 100059
-Descrição : ...
+Descrição : Projeto Batalha Naval
+            Realizado como projeto intermédio para a UC Programação
 */
 
 #include <unistd.h>
@@ -20,6 +21,12 @@ Descrição : ...
 
 int mult(int value);
 
+/** \brief Função main, recebe os argumentos colocados no terminal e executa
+ *         o modo de jogo especificado com as defenições especificadas.
+ *
+ * \param argc int -> número de argumentos colocados pelo utilizador
+ * \param argv[] char* -> argumentos recebidos
+ */
 int main(int argc, char *argv[])
 {
     int option, i;
@@ -27,11 +34,26 @@ int main(int argc, char *argv[])
     int pie_types[8] = {0,0,0,0,0,0,0,0};
     char board[15][24], sqr[3][3];
 
+    // Loop que processa dos argumentos recebidos e os grava nas suas respetivas variáveis.
     while((option = getopt(argc, argv, "ht:j:p:d:1:2:3:4:5:6:7:8:")) != -1)
     {
       switch(option){
         case 'h':
-            printf("* Print a help message\n");
+            printf("* ==========================================================\n");
+            printf("* Projeto Batalha Naval\n");
+            printf("* Argumentos:\n");
+            printf("*     -h               Help message\n");
+            printf("*     -t               Dimensões do tabuleiro(AlturaxLargura)\n");
+            printf("*     -p               Modo de posicionamento\n");
+            printf("*     -d               Modo de disparo\n");
+            printf("*     -1               Número de peças do tipo 1\n");
+            printf("*     -2               Número de peças do tipo 2\n");
+            printf("*     -3               Número de peças do tipo 3\n");
+            printf("*     -4               Número de peças do tipo 4\n");
+            printf("*     -5               Número de peças do tipo 5\n");
+            printf("*     -6               Número de peças do tipo 6\n");
+            printf("*     -7               Número de peças do tipo 7\n");
+            printf("*     -8               Número de peças do tipo 8\n");
             nothelped = 0;
             break;
         case 't':
@@ -87,38 +109,56 @@ int main(int argc, char *argv[])
         }
     }
 
+    // Condição que permite a escrita da help message nos casos especificados no enunciado
     if((used && modo_game != 2 && nothelped) ||(pused && modo_posicion != 2 && nothelped)){
-        printf(" *Print help message\n");
+            printf("* ==========================================================\n");
+            printf("* Projeto Batalha Naval\n");
+            printf("* Argumentos:\n");
+            printf("*     -h               Help message\n");
+            printf("*     -t               Dimensões do tabuleiro(AlturaxLargura)\n");
+            printf("*     -p               Modo de posicionamento\n");
+            printf("*     -d               Modo de disparo\n");
+            printf("*     -1               Número de peças do tipo 1\n");
+            printf("*     -2               Número de peças do tipo 2\n");
+            printf("*     -3               Número de peças do tipo 3\n");
+            printf("*     -4               Número de peças do tipo 4\n");
+            printf("*     -5               Número de peças do tipo 5\n");
+            printf("*     -6               Número de peças do tipo 6\n");
+            printf("*     -7               Número de peças do tipo 7\n");
+            printf("*     -8               Número de peças do tipo 8\n");
     }
 
+    // Seleção do modo de jogo
     switch(modo_game)
     {
     case 0:
         initBoard(board, height, width);
-        printf("* ================================\n");
+        printf("* ==========================================================\n");
         printf("* Modo de Jogo 0\n");
-        printf("* ================================\n");
+        printf("* Modo de posicionamento %d\n", modo_posicion);
+        printf("* ==========================================================\n");
         printf("%dx%d", height, width);
         mj0(board, height, width, sqr, pie_types, modo_posicion);
         drawBoard(board, height, width);
         break;
     case 1:
         initBoard(board, height, width);
-        printf("* ================================\n");
+        printf("* ==========================================================\n");
         printf("* Modo de Jogo 1\n");
+        printf("* Modo de posicionamento %d\n", modo_posicion);
         printf("* Insira as coordenadas de disparo\n");
-        printf("* ================================\n");
+        printf("* ==========================================================\n");
         printf("%dx%d", height, width);
         mj1(board, height, width, sqr, pie_types, modo_posicion);
         drawBoard(board, height, width);
         break;
     case 2:
-        printf("* ==================================================\n");
+        printf("* ==========================================================\n");
         printf("* Modo de Jogo 2\n");
         printf("* Modo de disparo %d\n", modo_shot);
         printf("* Crie um tabuleiro com as características indicadas\n");
         printf("* Responda aos disparos do programa\n");
-        printf("* ==================================================\n");
+        printf("* ==========================================================\n");
         printf("%dx%d", height, width);
         for(i = 0; i < 8; i++){
             printf(" %d", pie_types[i]);
@@ -129,7 +169,12 @@ int main(int argc, char *argv[])
     }
     return EXIT_SUCCESS;
 }
-//Function that checks whether the value is a multiple of 3
+/** \brief Função de ajuda que verifica a multipliidade por 3 de um valor
+ *
+ * \param value int -> valor a ser verificado
+ * \return int -> é retornado 1 se o valor não for multiplo
+ *
+ */
 int mult(int value)
 {
     if(value%3 == 0)
