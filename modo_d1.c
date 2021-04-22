@@ -51,7 +51,7 @@ int d1(int height ,int width,int pie_types[8])
             }
         }
         shot_board[height_rand_coord][width_rand_coord] = character;
-    }while(remain);
+    }while(remain && (tries <= height*width));
     tf = (unsigned)time(NULL);
     dt = tf - ti;
     printf("Fim de jogo: %d jogadas ", tries);

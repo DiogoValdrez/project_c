@@ -23,7 +23,7 @@ int mult(int value);
 int main(int argc, char *argv[])
 {
     int option, i;
-    int height = 9,width = 9, modo_game = 0, modo_posicion = 1, modo_shot = 1, nothelped = 1;
+    int height = 9,width = 9, modo_game = 0, modo_posicion = 1, modo_shot = 1, nothelped = 1, used = 0, pused = 0;
     int pie_types[8] = {0,0,0,0,0,0,0,0};
     char board[15][24], sqr[3][3];
 
@@ -50,50 +50,45 @@ int main(int argc, char *argv[])
             break;
         case 'd':
             sscanf(optarg, "%d", &modo_shot);
+            used = 1;
             break;
         case '1':
+            sscanf(optarg, "%d", &pie_types[0]);
+            pused = 1;
+            break;
         case '2':
+            sscanf(optarg, "%d", &pie_types[1]);
+            pused = 1;
+            break;
         case '3':
+            sscanf(optarg, "%d", &pie_types[2]);
+            pused = 1;
+            break;
         case '4':
+            sscanf(optarg, "%d", &pie_types[3]);
+            pused = 1;
+            break;
         case '5':
+            sscanf(optarg, "%d", &pie_types[4]);
+            pused = 1;
+            break;
         case '6':
+            sscanf(optarg, "%d", &pie_types[5]);
+            pused = 1;
+            break;
         case '7':
+            sscanf(optarg, "%d", &pie_types[6]);
+            pused = 1;
+            break;
         case '8':
-        if (modo_game == 2 || modo_posicion == 2)
-            {
-                switch (option)
-                {
-                    case '1':
-                        sscanf(optarg, "%d", &pie_types[0]);
-                        break;
-                    case '2':
-                        sscanf(optarg, "%d", &pie_types[1]);
-                        break;
-                    case '3':
-                        sscanf(optarg, "%d", &pie_types[2]);
-                        break;
-                    case '4':
-                        sscanf(optarg, "%d", &pie_types[3]);
-                        break;
-                    case '5':
-                        sscanf(optarg, "%d", &pie_types[4]);
-                        break;
-                    case '6':
-                        sscanf(optarg, "%d", &pie_types[5]);
-                        break;
-                    case '7':
-                        sscanf(optarg, "%d", &pie_types[6]);
-                        break;
-                    case '8':
-                        sscanf(optarg, "%d", &pie_types[7]);
-                        break;
-                }
-            }else if(modo_posicion == 1 && nothelped){
-                printf(" *Print help message\n");
-                nothelped = 0;
-            }
-        break;
+            sscanf(optarg, "%d", &pie_types[7]);
+            pused = 1;
+            break;
         }
+    }
+
+    if((used && modo_game != 2 && nothelped) ||(pused && modo_posicion != 2 && nothelped)){
+        printf(" *Print help message\n");
     }
 
     switch(modo_game)
@@ -144,12 +139,3 @@ int mult(int value)
         return 1;
     }
 }
-/*
-if (modo_game==2)
-            {  
-                sscanf(optarg, "%d", &modo_shot);
-            }else if(nothelped){
-                printf("* Print help message\n");
-                nothelped = 0;
-            }
-*/

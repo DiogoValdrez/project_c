@@ -36,7 +36,7 @@ int d3(int height ,int width, int pie_types[8])
                 {
                     for (j=0;j<3;j++)
                     {
-                        if (shot_board[temp_height + i][temp_width + j] == character)
+                        if (shot_board[temp_height + i][temp_width + j] == character && shot_board[temp_height + i][temp_width + j] != '-')
                         {
                             if (shot_board[temp_height + i + 1][temp_width + j] == ' ' && temp_height + i + 1 < height)
                             {
