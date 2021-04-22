@@ -1,7 +1,5 @@
 #include "pieces.h"
 
-/*Function that changes each 3x3 matrix for the piece
-that is suposed to put in it*/
 /** \brief Função que transforma o tipo de peça e a variante numa peça posta numa matriz 3x3
  *
  * \param id_piece -> o tipo de peça
