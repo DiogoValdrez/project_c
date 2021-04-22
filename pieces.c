@@ -1,7 +1,12 @@
 #include "pieces.h"
 
-/*Function that changes each 3x3 matrix for the piece
-that is suposed to put in it*/
+/** \brief Função que transforma o tipo de peça e a variante numa peça posta numa matriz 3x3
+ *
+ * \param id_piece -> o tipo de peça
+ * \param id_var -> a variante da peça
+ * \param sqr -> matriz 3x3
+ */
+
 void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor_width,char sqr[3][3])
 {
     switch (id_piece)
@@ -267,30 +272,58 @@ void pieces(char id_piece,int id_var,char board[15][24],int coor_height,int coor
 
     }
 }
-
-void sqr_board(char board[15][24],int coor_height,int coor_width, char sqr[3][3]){
+/** \brief Função que coloca a matriz 3x3 que contem a peça
+ *
+ * \param board -> tabuleiro de jogo
+ * \param coor_height -> coordenada da altura do tabuleiro em que queremos colocar a matriz
+ * \param coor_width -> coordenada da largura do tabuleiro em que queremos colocar a matriz
+ * \param sqr -> matriz 3x3 onde vem a peça
+ */
+void sqr_board(char board[15][24],int coor_height,int coor_width, char sqr[3][3])
+{
     int i, j;
-    for( i = 0; i < 3; i++){
-        for( j = 0; j < 3; j++){
-            if(sqr[i][j] != '\0'){
+    for( i = 0; i < 3; i++)
+    {
+        for( j = 0; j < 3; j++)
+        {
+            if(sqr[i][j] != '\0')
+            {
                 board[i+coor_height][j+coor_width] = sqr[i][j];
             }
         }
     }
 }
-void del_sqr(char sqr[3][3]){
+
+
+/** \brief Funcão que reinicia a matriz 3x3
+ *
+ * \param sqr -> matriz 3x3
+ */
+void del_sqr(char sqr[3][3])
+{
     int i, j;
-    for( i = 0; i < 3; i++){
-        for( j = 0; j < 3; j++){
+    for( i = 0; i < 3; i++)
+        {
+        for( j = 0; j < 3; j++)
+        {
             sqr[i][j] = '\0';
         }
     }
 }
+
+/** \brief Funcão que coloca os espaços no tabuleiro onde a matriz vai ser colocada a '-'
+ *
+ * \param board -> tabuleiro de jogo
+ * \param coor_height -> coordenada da altura do tabuleiro em que queremos colocar a matriz
+ * \param coor_width -> coordenada da largura do tabuleiro em que queremos colocar a matriz
+ */
 void ctrl_Z(char board[15][24],int coor_height,int coor_width)
 {
     int i, j;
-    for( i = coor_height; i < coor_height+3; i++){
-        for( j = coor_width; j < coor_width+3; j++){
+    for( i = coor_height; i < coor_height+3; i++)
+    {
+        for( j = coor_width; j < coor_width+3; j++)
+        {
             board[i][j] = '-';
         }
     }
