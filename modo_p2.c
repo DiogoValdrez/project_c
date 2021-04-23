@@ -16,8 +16,10 @@
 
 int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8])
 {
-    int restric03 = restric3(pie_types);
-    int restric04 = restric4(height,width,pie_types);
+    
+    //Se a restrição 3 e 4 não forem cumpridas acaba o programa
+    restric3(pie_types);
+    restric4(height,width,pie_types);  
     int coor_height = 0, coor_width = 0;
     int id_var = 0;
     int rep_8 = 0, rep_1000 = 0;
@@ -26,11 +28,7 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
     int pie_types_tested[8] = {0,0,0,0,0,0,0,0};
     char id_piece;
     srand((unsigned)time(NULL));
-    //Se a restrição 3 e 4 não forem cumpridas acaba o programa
-    if (!(restric03 && restric04))
-    {
-        return EXIT_FAILURE;
-    }
+
     //Salvaguardar pie_types em pie_types_save
     for (l = 0; l < 8; l++)
     {
@@ -45,7 +43,7 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
         for (l = 0; l < 8; l++)
         {
             pie_types[l] = pie_types_save[l];
-        }
+        }       
         //For loop que "varre" todas as matrizes do tabuleiro
         for(coor_height = 0; coor_height < height; coor_height += 3)
         {
@@ -60,7 +58,7 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                 }
 
                 do
-                {
+                {                   
                     ctrl_Z(board,coor_height,coor_width);
                     del_sqr(sqr);
                     //Escolher um tipo de peça aleatório
@@ -70,7 +68,7 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                         if (id_piece == '0')
                         {
                             break;
-                        }
+                        }                     
                     }while(pie_types[id_piece - '0'- 1] == 0 || pie_types_tested[id_piece - '0'- 1] != 0);
 
                     //Escolher uma variante de peça aleatória
@@ -115,7 +113,7 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                             return EXIT_FAILURE;
 
                     }
-                    sqr_board(board, coor_height, coor_width, sqr);
+                    sqr_board(board, coor_height, coor_width, sqr);                    
                     //Caso restrição 1 não esteja cumprida, experimentar todas as variantes da peça
                     if (!(restric01( board, coor_height, coor_width, width)))
                     {
@@ -216,31 +214,29 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
                             default:
                                 break;
                         }
-
+                        
                         if (!(restric01( board, coor_height, coor_width, width)) && rep_8 <8)
                         {
                             rep_8 = rep_8 + 1;
                             pie_types_tested [id_piece - '0'- 1] ++;
                         }
-                    }
+                    }                    
                 }while(!(restric01( board, coor_height, coor_width, width)) && rep_8 <8);
-
+                
                 //Se a restrição 1 estiver a ser cumprida, tirar essa peça à matriz pie_types
-                if(restric01( board, coor_height, coor_width, width))
+                if(restric01( board, coor_height, coor_width, width) && id_piece != '0')
                 {
                     pie_types[id_piece - '0'- 1] --;
-                }
+                }                
                 if (rep_8 == 8)
                 {
                     break;
                 }
-
-            }
+            } 
             if (rep_8 == 8)
             {
                 break;
             }
-
         }
         //Caso tem havido 8 repeticões do processo anterior, voltar ao início do tabuleiro
         if (rep_8==8)
@@ -252,7 +248,8 @@ int p2(char board[15][24],int height,int width, char sqr[3][3], int pie_types[8]
         }
         if (rep_1000 == 1000)
         {
-            return EXIT_FAILURE;
+            puts("-1");
+            exit(0);
         }
     }while(rep_8 == 8 && rep_1000<1000);
 

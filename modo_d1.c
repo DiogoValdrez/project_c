@@ -64,7 +64,7 @@ int d1(int height ,int width,int pie_types[8])
         }
         // Colocação do disparo no tabuleiro a ser imprimido no final
         shot_board[height_rand_coord][width_rand_coord] = character;
-    }while(remain && (tries <= height*width));
+    }while(remain && (tries < height*width));
     // Medição de tempo atravez da variação do tempo em segundos
     tf = (unsigned)time(NULL);
     dt = tf - ti;

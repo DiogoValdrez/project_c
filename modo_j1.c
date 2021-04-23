@@ -34,7 +34,7 @@ int mj1(char board[15][24], int height, int width, char sqr[3][3], int pie_types
     ti = (unsigned)time(NULL);
 
     // Loop principal onde é recebido o imput do jogado e verificado
-    while(shooted < num_blocks){
+    while(shooted < num_blocks && tries < height*width){
         scanf(" %c%d", &character, &y);
         x = (int)character - 65;
         printf("%c\n", board[height-y][x]);
