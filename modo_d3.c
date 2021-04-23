@@ -57,11 +57,11 @@ int d3(int height ,int width, int pie_types[8])
                             {
                                 shot_board[temp_height + i + 1][temp_width + j] = 'x';
                             }
-                            if (shot_board[temp_height + i ][temp_width + j + 1] == ' ' && temp_width + i + 1 < width)
+                            if (shot_board[temp_height + i ][temp_width + j + 1] == ' ' && temp_width + j + 1 < width)
                             {
                                 shot_board[temp_height + i][temp_width + j + 1] = 'x';
                             }
-                            if (shot_board[temp_height + i + 1][temp_width + j + 1] == ' ' && temp_height + i + 1 < height && temp_width + i + 1 < width)
+                            if (shot_board[temp_height + i + 1][temp_width + j + 1] == ' ' && temp_height + i + 1 < height && temp_width + j + 1 < width)
                             {
                                 shot_board[temp_height + i + 1][temp_width + j + 1] = 'x';
                             }
@@ -77,7 +77,7 @@ int d3(int height ,int width, int pie_types[8])
                             {
                                 shot_board[temp_height + i - 1][temp_width + j] = 'x';
                             }
-                            if (shot_board[temp_height + i -1][temp_width + j + 1] == ' ' && temp_height + i - 1 >= 0 && temp_width + i + 1 < width)
+                            if (shot_board[temp_height + i -1][temp_width + j + 1] == ' ' && temp_height + i - 1 >= 0 && temp_width + j + 1 < width)
                             {
                                 shot_board[temp_height + i - 1][temp_width + j + 1] = 'x';
                             }
